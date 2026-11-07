@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#0c1012;color:#f2f0ea;font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  img,video{display:block;max-width:100%}
+  a{color:#8ecbe8;text-decoration:none}
+  a:hover{color:#fff}
+  @keyframes slideIn{from{opacity:0}to{opacity:1}}
+  @keyframes kenburns{from{transform:scale(1.04)}to{transform:scale(1.14)}}
+  @keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="background:#0c1012">
+
+<section id="story" style="position:relative;height:900vh;background:#0c1012">
+<div style="position:sticky;top:0;height:100vh;overflow:hidden;background:#0c1012">
+
+  <sc-if value="{{ c0 }}" hint-placeholder-val="{{ true }}">
+  <div style="position:absolute;inset:0;animation:slideIn 1s ease both">
+    <img src="https://images.unsplash.com/photo-1558388556-2261d4cc1938?fm=jpg&amp;q=80&amp;w=2400&amp;auto=format&amp;fit=crop" alt="Aerial view of a flooded parcel of arable land" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kenburns 20s ease-out both">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,13,.62) 0%,rgba(8,11,13,.34) 40%,rgba(8,11,13,.84) 100%)"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 88px 160px">
+      <h1 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(46px,7.4vw,108px);line-height:.98;letter-spacing:-.02em;color:#fff;max-width:18ch;text-wrap:balance;animation:riseIn 1s ease both">When a field floods, you know first.</h1>
+      <p style="margin:28px 0 0;color:#eceae4;font-size:clamp(17px,1.3vw,20px);line-height:1.6;max-width:60ch;text-wrap:pretty;animation:riseIn 1s ease .12s both">Solar nodes read soil moisture and standing water across every field, and text you the moment the ground turns.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px 48px;margin-top:56px;max-width:900px;width:100%;animation:riseIn 1s ease .28s both">
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">Alerts fire on saturation and rising standing water</div>
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">Direct SMS to your phone, no app to install</div>
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">Raw moisture plus a 0–100 condition index per node</div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ c1 }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;animation:slideIn 1s ease both">
+    <img src="https://images.unsplash.com/photo-1559628233-100c798642d4?fm=jpg&amp;q=80&amp;w=2400&amp;auto=format&amp;fit=crop" alt="Aerial view of terraced rice fields at sunrise" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;animation:kenburns 20s ease-out both">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,13,.6) 0%,rgba(8,11,13,.3) 40%,rgba(8,11,13,.84) 100%)"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 88px 160px">
+      <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(42px,6.6vw,96px);line-height:1;letter-spacing:-.02em;color:#fff;max-width:18ch;text-wrap:balance">Every field on a single SIM.</h2>
+      <p style="margin:28px 0 0;color:#eceae4;font-size:clamp(17px,1.3vw,20px);line-height:1.6;max-width:60ch;text-wrap:pretty">Nodes carry readings 340m over radio to one base station. No internet at the field edge, no subscription per sensor.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px 48px;margin-top:56px;max-width:900px;width:100%">
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">433MHz radio between nodes, free to run</div>
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">340m verified in saturated rice paddies</div>
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">No WiFi or internet needed at the field edge</div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ c2 }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;animation:slideIn 1s ease both">
+    <img src="https://images.unsplash.com/photo-1750600862513-3b2cd722e296?fm=jpg&amp;q=80&amp;w=2400&amp;auto=format&amp;fit=crop" alt="Dark storm clouds over an open field" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kenburns 20s ease-out both">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,13,.56) 0%,rgba(8,11,13,.28) 40%,rgba(8,11,13,.86) 100%)"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 88px 160px">
+      <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(42px,6.6vw,96px);line-height:1;letter-spacing:-.02em;color:#fff;max-width:18ch;text-wrap:balance">Tested in the mud, not on a bench.</h2>
+      <p style="margin:28px 0 0;color:#eceae4;font-size:clamp(17px,1.3vw,20px);line-height:1.6;max-width:60ch;text-wrap:pretty">A node sits in working ground at Maejo University, Chiang Mai, through an actual wet season.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px 48px;margin-top:56px;max-width:900px;width:100%">
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">340m verified radio range in saturated ground</div>
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">One SIM covers an entire farm</div>
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">Starter kit from ₱4,500, no subscription</div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ c3 }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;animation:slideIn 1s ease both">
+    <img src="https://images.unsplash.com/photo-1551651437-f293403584ec?fm=jpg&amp;q=80&amp;w=2400&amp;auto=format&amp;fit=crop" alt="Aerial view of terraced paddies in daytime" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kenburns 20s ease-out both">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,13,.62) 0%,rgba(8,11,13,.36) 40%,rgba(8,11,13,.86) 100%)"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 88px 160px">
+      <div style="display:flex;align-items:baseline;gap:14px;font-size:13px;font-weight:500;letter-spacing:.16em;color:rgba(255,255,255,.72);margin-bottom:30px"><span>01</span><span style="width:60px;height:1px;background:rgba(255,255,255,.4)"></span><span>THE SYSTEM</span></div>
+      <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(38px,5.6vw,82px);line-height:1.02;letter-spacing:-.02em;color:#fff;max-width:22ch;text-wrap:balance">Know every field without walking it.</h2>
+      <p style="margin:28px 0 0;color:#eceae4;font-size:clamp(17px,1.3vw,20px);line-height:1.6;max-width:60ch;text-wrap:pretty">Each node reads soil moisture and surface water on one cycle, then scores it 0–100 against that site's own wilting point and saturation.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px 48px;margin-top:56px;max-width:900px;width:100%">
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">Capacitive soil probe</div>
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">Water level sensor</div>
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">0–100 condition index</div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ c4 }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;animation:slideIn 1s ease both">
+    <img src="https://images.unsplash.com/photo-1773946084386-b02e2210bc56?fm=jpg&amp;q=80&amp;w=2400&amp;auto=format&amp;fit=crop" alt="Cracked dry earth with sparse grass" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kenburns 20s ease-out both">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,13,.66) 0%,rgba(8,11,13,.44) 40%,rgba(8,11,13,.86) 100%)"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 88px 160px">
+      <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,5vw,72px);line-height:1.04;letter-spacing:-.015em;color:#fff;max-width:26ch;text-wrap:balance">The soil changes before the field looks any different.</h2>
+      <p style="margin:28px 0 0;color:#eceae4;font-size:clamp(17px,1.3vw,20px);line-height:1.6;max-width:58ch;text-wrap:pretty">By the time standing water is visible from the road, the root zone has been saturated for hours. The nodes read the ground itself, every cycle.</p>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ c5 }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;animation:slideIn 1s ease both">
+    <img src="/uploads/site/images/field-deployed.jpg" alt="A sensor node and its solar panel in a waterlogged field" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:64% 52%">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,13,.6) 0%,rgba(8,11,13,.34) 40%,rgba(8,11,13,.88) 100%)"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 88px 160px">
+      <div style="display:flex;align-items:baseline;gap:14px;font-size:13px;font-weight:500;letter-spacing:.16em;color:rgba(255,255,255,.72);margin-bottom:30px"><span>02</span><span style="width:60px;height:1px;background:rgba(255,255,255,.4)"></span><span>FIELD PILOT</span></div>
+      <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(38px,5.6vw,82px);line-height:1.02;letter-spacing:-.02em;color:#fff;max-width:20ch;text-wrap:balance">Built, sealed, and left in the field.</h2>
+      <p style="margin:28px 0 0;color:#eceae4;font-size:clamp(17px,1.3vw,20px);line-height:1.6;max-width:60ch;text-wrap:pretty">Thresholds are calibrated against real soil samples before any unit goes out. This is a pre-production node, in working ground.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px 48px;margin-top:56px;max-width:900px;width:100%">
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">In standing water, unattended</div>
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">No mast, no trenching</div>
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">A node in the ground in Chiang Mai</div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ c6 }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;animation:slideIn 1s ease both">
+    <img src="https://images.unsplash.com/photo-1720156457517-c5ae8b9915f0?fm=jpg&amp;q=80&amp;w=2400&amp;auto=format&amp;fit=crop" alt="Aerial view of patchwork farmland at evening" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kenburns 20s ease-out both">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,13,.72) 0%,rgba(8,11,13,.52) 40%,rgba(8,11,13,.88) 100%)"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:140px 88px 160px;max-width:1180px;margin:0 auto">
+      <div style="display:flex;align-items:baseline;gap:14px;font-size:13px;font-weight:500;letter-spacing:.16em;color:rgba(255,255,255,.72);margin-bottom:36px"><span style="width:60px;height:1px;background:rgba(255,255,255,.4)"></span><span>FIELD NOTE</span></div>
+      <p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,46px);line-height:1.24;letter-spacing:-.01em;color:#fff;max-width:34ch;text-wrap:pretty">Flood detectors represent a critical shift toward precision farming. These systems successfully achieve foundational goals like minimizing crop damage and giving operators the exact data needed to perform rapid mitigation strategies.</p>
+      <div style="margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.34);display:flex;flex-wrap:wrap;gap:8px 20px;font-size:16px;color:#cfd6da;max-width:34ch">
+        <span style="color:#fff;font-weight:500">Bhuvan</span>
+        <span>Student researcher, Maejo University</span>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ c7 }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;animation:slideIn 1s ease both">
+    <img src="https://images.unsplash.com/photo-1778582622087-7f871700a376?fm=jpg&amp;q=80&amp;w=2400&amp;auto=format&amp;fit=crop" alt="Farmers working in flooded rice paddies" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kenburns 20s ease-out both">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,13,.74) 0%,rgba(8,11,13,.56) 40%,rgba(8,11,13,.9) 100%)"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:140px 88px 160px;max-width:1180px;margin:0 auto;width:100%">
+      <div style="display:flex;align-items:baseline;gap:14px;font-size:13px;font-weight:500;letter-spacing:.16em;color:rgba(255,255,255,.72);margin-bottom:30px"><span>03</span><span style="width:60px;height:1px;background:rgba(255,255,255,.4)"></span><span>HARDWARE</span></div>
+      <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,4.8vw,72px);line-height:1.02;letter-spacing:-.02em;color:#fff;max-width:20ch">Get a kit in the ground.</h2>
+      <p style="margin:22px 0 0;color:#eceae4;font-size:18px;line-height:1.6;max-width:50ch;text-wrap:pretty">Buy the base station once, then add a node per field. No subscription, no per-sensor SIM.</p>
+      <div style="margin-top:48px;border-top:1px solid rgba(255,255,255,.66)">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 36px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.3)">
+          <div style="flex:0 1 220px;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(24px,2.2vw,32px);color:#fff">Starter Kit</div>
+          <p style="flex:1 1 280px;margin:0;font-size:16px;line-height:1.55;color:#cfd6da;max-width:44ch">Cellular base module, one sensor node, solar for both. Launch price for the first 10 customers, then ₱8,200.</p>
+          <div style="flex:none;margin-left:auto;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(24px,2.2vw,32px);color:#fff">₱4,500</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 36px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.3)">
+          <div style="flex:0 1 220px;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(24px,2.2vw,32px);color:#fff">Transmitter Module</div>
+          <p style="flex:1 1 280px;margin:0;font-size:16px;line-height:1.55;color:#cfd6da;max-width:44ch">Soil and water sensor node, pairs to your existing base. ₱2,000 each for the first 10 customers, then ₱3,800.</p>
+          <div style="flex:none;margin-left:auto;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(24px,2.2vw,32px);color:#fff">₱2,000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ c8 }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;animation:slideIn 1s ease both">
+    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?fm=jpg&amp;q=80&amp;w=2400&amp;auto=format&amp;fit=crop" alt="Open farmland at the end of the day" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kenburns 22s ease-out both">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,13,.66) 0%,rgba(8,11,13,.4) 42%,rgba(8,11,13,.9) 100%)"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 88px 160px">
+      <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(42px,6.4vw,92px);line-height:1;letter-spacing:-.02em;color:#fff;max-width:16ch;text-wrap:balance">Put one in a field.</h2>
+      <p style="margin:26px 0 0;color:#eceae4;font-size:clamp(17px,1.3vw,20px);line-height:1.6;max-width:52ch;text-wrap:pretty">Talk hardware, pricing, or how a pilot could work on your land.</p>
+      <a href="{{ mailto }}" style="margin-top:40px;background:#fff;color:#111517;padding:17px 34px;font-size:15px;font-weight:500;letter-spacing:.12em" style-hover="background:#11577a;color:#fff">CONTACT THE TEAM</a>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px 48px;margin-top:56px;max-width:900px;width:100%">
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">Launch price: ₱4,500 starter, ₱2,000 per added node</div>
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">No subscription and no per-sensor SIM</div>
+        <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:14px;color:#eceae4;font-size:15px;line-height:1.5">Pilot running now in Chiang Mai</div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <div style="position:absolute;top:0;left:0;right:0;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:40px;padding:30px 56px">
+    <button onClick="{{ go0 }}" style="background:none;border:none;padding:0;cursor:pointer;font-family:'Instrument Serif',Georgia,serif;font-size:30px;letter-spacing:.04em;color:#fff">FMS</button>
+    <div style="display:flex;gap:36px;font-size:16px">
+      <button onClick="{{ go3 }}" style="background:none;border:none;padding:0;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:16px;color:#fff" style-hover="color:#cfd6da">System</button>
+      <button onClick="{{ go5 }}" style="background:none;border:none;padding:0;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:16px;color:#fff" style-hover="color:#cfd6da">Field pilot</button>
+      <button onClick="{{ go7 }}" style="background:none;border:none;padding:0;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:16px;color:#fff" style-hover="color:#cfd6da">Hardware</button>
+      <a href="#compare" style="color:#fff" style-hover="color:#cfd6da">Compare</a>
+      <a href="#partners" style="color:#fff" style-hover="color:#cfd6da">Partners</a>
+      <a href="#faq" style="color:#fff" style-hover="color:#cfd6da">FAQ</a>
+    </div>
+    <a href="{{ mailto }}" style="border:1px solid rgba(255,255,255,.6);color:#fff;padding:11px 22px;font-size:15px;font-weight:500" style-hover="background:#fff;color:#111517">Contact</a>
+  </div>
+
+  <div style="position:absolute;right:40px;top:50%;transform:translateY(-50%);z-index:3;display:flex;flex-direction:column;gap:18px;align-items:center">
+    <button onClick="{{ go0 }}" aria-label="Chapter 1" style="{{ dot0 }}"></button>
+    <button onClick="{{ go1 }}" aria-label="Chapter 2" style="{{ dot1 }}"></button>
+    <button onClick="{{ go2 }}" aria-label="Chapter 3" style="{{ dot2 }}"></button>
+    <button onClick="{{ go3 }}" aria-label="Chapter 4" style="{{ dot3 }}"></button>
+    <button onClick="{{ go4 }}" aria-label="Chapter 5" style="{{ dot4 }}"></button>
+    <button onClick="{{ go5 }}" aria-label="Chapter 6" style="{{ dot5 }}"></button>
+    <button onClick="{{ go6 }}" aria-label="Chapter 7" style="{{ dot6 }}"></button>
+    <button onClick="{{ go7 }}" aria-label="Chapter 8" style="{{ dot7 }}"></button>
+    <button onClick="{{ go8 }}" aria-label="Chapter 9" style="{{ dot8 }}"></button>
+  </div>
+
+  <div style="position:absolute;left:56px;right:56px;bottom:0;z-index:3;border-top:1px solid rgba(255,255,255,.28);display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;padding:22px 0 26px">
+    <div style="color:#fff;font-size:15px;letter-spacing:.1em">{{ counter }}</div>
+    <div style="color:rgba(255,255,255,.72);font-size:15px;letter-spacing:.1em">SCROLL TO CONTINUE</div>
+    <a href="{{ mailto }}" style="color:#fff;font-size:15px;letter-spacing:.1em" style-hover="color:#cfd6da">TALK TO THE TEAM</a>
+  </div>
+</div>
+</section>
+
+<section id="how" style="background:#0c1012;padding:120px 0;border-top:1px solid rgba(255,255,255,.26)">
+  <div style="max-width:1280px;margin:0 auto;padding:0 48px">
+    <div style="display:flex;align-items:baseline;gap:14px;font-size:13px;font-weight:500;letter-spacing:.16em;color:rgba(255,255,255,.62)"><span>04</span><span style="flex:1;height:1px;background:rgba(255,255,255,.26);max-width:80px"></span><span>HOW IT WORKS</span></div>
+    <h2 style="margin:34px 0 0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(32px,4.2vw,56px);line-height:1.04;letter-spacing:-.015em;color:#fff;max-width:22ch;text-wrap:balance">From the ground to your phone in three steps.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:48px;margin-top:64px">
+      <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:22px"><div style="font-size:13px;font-weight:500;letter-spacing:.16em;color:#8ecbe8">STEP 1</div><div style="margin-top:14px;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(26px,2.4vw,34px);line-height:1.1;color:#fff">Nodes read the ground</div><p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#c3cacd;max-width:44ch;text-wrap:pretty">Each solar node reads soil moisture and surface water on one cycle, then scores it 0–100 against that site’s own wilting point and saturation.</p></div>
+      <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:22px"><div style="font-size:13px;font-weight:500;letter-spacing:.16em;color:#8ecbe8">STEP 2</div><div style="margin-top:14px;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(26px,2.4vw,34px);line-height:1.1;color:#fff">Radio to one base station</div><p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#c3cacd;max-width:44ch;text-wrap:pretty">Readings travel over free 433MHz radio, up to 340m in saturated ground, to a single base station. No WiFi or internet at the field edge.</p></div>
+      <div style="border-top:1px solid rgba(255,255,255,.34);padding-top:22px"><div style="font-size:13px;font-weight:500;letter-spacing:.16em;color:#8ecbe8">STEP 3</div><div style="margin-top:14px;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(26px,2.4vw,34px);line-height:1.1;color:#fff">SMS to your phone</div><p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#c3cacd;max-width:44ch;text-wrap:pretty">The base station’s one SIM texts you when a field goes saturated or standing water rises. Text STATUS any time for current numbers and a map pin.</p></div>
+    </div>
+    <div style="margin-top:96px">
+      <div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(28px,3vw,42px);line-height:1.1;color:#fff">Specs at a glance</div>
+      <div style="margin-top:28px;border-bottom:1px solid rgba(255,255,255,.22);max-width:980px">
+        <div style="border-top:1px solid rgba(255,255,255,.22);padding:18px 0;display:flex;flex-wrap:wrap;gap:6px 28px;align-items:baseline"><div style="flex:0 0 150px;font-size:13px;font-weight:500;letter-spacing:.14em;color:rgba(255,255,255,.62)">SENSING</div><div style="flex:1 1 260px;font-size:17px;line-height:1.55;color:#eceae4">Capacitive soil probe and a water level sensor on every node</div></div>
+        <div style="border-top:1px solid rgba(255,255,255,.22);padding:18px 0;display:flex;flex-wrap:wrap;gap:6px 28px;align-items:baseline"><div style="flex:0 0 150px;font-size:13px;font-weight:500;letter-spacing:.14em;color:rgba(255,255,255,.62)">OUTPUT</div><div style="flex:1 1 260px;font-size:17px;line-height:1.55;color:#eceae4">Raw soil moisture plus a 0–100 condition index per node</div></div>
+        <div style="border-top:1px solid rgba(255,255,255,.22);padding:18px 0;display:flex;flex-wrap:wrap;gap:6px 28px;align-items:baseline"><div style="flex:0 0 150px;font-size:13px;font-weight:500;letter-spacing:.14em;color:rgba(255,255,255,.62)">RADIO</div><div style="flex:1 1 260px;font-size:17px;line-height:1.55;color:#eceae4">433MHz node-to-base, 340m verified in saturated rice paddies at 1200bps</div></div>
+        <div style="border-top:1px solid rgba(255,255,255,.22);padding:18px 0;display:flex;flex-wrap:wrap;gap:6px 28px;align-items:baseline"><div style="flex:0 0 150px;font-size:13px;font-weight:500;letter-spacing:.14em;color:rgba(255,255,255,.62)">UPLINK</div><div style="flex:1 1 260px;font-size:17px;line-height:1.55;color:#eceae4">Standard cellular SMS. One SIM per base station, none per sensor</div></div>
+        <div style="border-top:1px solid rgba(255,255,255,.22);padding:18px 0;display:flex;flex-wrap:wrap;gap:6px 28px;align-items:baseline"><div style="flex:0 0 150px;font-size:13px;font-weight:500;letter-spacing:.14em;color:rgba(255,255,255,.62)">POWER</div><div style="flex:1 1 260px;font-size:17px;line-height:1.55;color:#eceae4">Solar with internal batteries that carry each module through several days without direct sun</div></div>
+        <div style="border-top:1px solid rgba(255,255,255,.22);padding:18px 0;display:flex;flex-wrap:wrap;gap:6px 28px;align-items:baseline"><div style="flex:0 0 150px;font-size:13px;font-weight:500;letter-spacing:.14em;color:rgba(255,255,255,.62)">ALERTS</div><div style="flex:1 1 260px;font-size:17px;line-height:1.55;color:#eceae4">Automatic texts on saturation and rising standing water. Dry-side alerts are on the roadmap</div></div>
+        <div style="border-top:1px solid rgba(255,255,255,.22);padding:18px 0;display:flex;flex-wrap:wrap;gap:6px 28px;align-items:baseline"><div style="flex:0 0 150px;font-size:13px;font-weight:500;letter-spacing:.14em;color:rgba(255,255,255,.62)">NOT MEASURED</div><div style="flex:1 1 260px;font-size:17px;line-height:1.55;color:#eceae4">Nutrients, pH and soil temperature. FMS reads moisture and standing water only</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="compare" style="background:#0f1417;padding:120px 0;border-top:1px solid rgba(255,255,255,.26)">
+  <div style="max-width:1280px;margin:0 auto;padding:0 48px">
+    <div style="display:flex;align-items:baseline;gap:14px;font-size:13px;font-weight:500;letter-spacing:.16em;color:rgba(255,255,255,.62)"><span>05</span><span style="flex:1;height:1px;background:rgba(255,255,255,.26);max-width:80px"></span><span>COMPARE</span></div>
+    <h2 style="margin:34px 0 0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(32px,4.2vw,56px);line-height:1.04;letter-spacing:-.015em;color:#fff;max-width:22ch;text-wrap:balance">Field monitoring that doesn’t cost a car.</h2>
+    <p style="margin:26px 0 0;font-size:18px;line-height:1.65;color:#c3cacd;max-width:58ch;text-wrap:pretty">Commercial soil and field monitoring is priced for large estates. FMS is built for farms that need to know when the ground floods, at a price a single farm can pay once.</p>
+
+    <div style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+      <div style="border:1px solid rgba(255,255,255,.26);padding:26px 24px"><div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(24px,2.2vw,32px);line-height:1.1;color:#fff">Launch offer · first 10 customers</div><p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#c3cacd">Starter Kit: <span style="color:#fff;font-weight:500">₱4,500</span> (base module, one sensor node, solar for both)</p><p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#c3cacd">Each added transmitter module: <span style="color:#fff;font-weight:500">₱2,000</span></p></div>
+      <div style="border:1px solid rgba(255,255,255,.26);padding:26px 24px"><div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(24px,2.2vw,32px);line-height:1.1;color:#fff">Standard pricing</div><p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#c3cacd">After the first 10 customers: Starter Kit <span style="color:#fff;font-weight:500">₱8,200</span></p><p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#c3cacd">Each added transmitter module <span style="color:#fff;font-weight:500">₱3,800</span></p><p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#c3cacd">No subscription and no per-sensor SIM.</p></div>
+    </div>
+
+    <div style="margin-top:72px;max-width:980px">
+      <div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(26px,2.8vw,38px);line-height:1.1;color:#fff">Upfront cost, in pesos</div>
+      <div style="margin-top:24px;border-bottom:1px solid rgba(255,255,255,.18)">
+        <div style="padding:18px 0;border-top:1px solid rgba(255,255,255,.18)"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 24px"><div style="font-size:17px;font-weight:500;color:#fff">FMS Starter Kit · launch price</div><div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(24px,2.2vw,32px);color:#8ecbe8">₱4,500</div></div><div style="margin-top:6px;font-size:14px;line-height:1.5;color:#9aa3a8">Base module + 1 sensor node + solar. No subscription.</div><div style="margin-top:12px;height:14px;background:rgba(255,255,255,.08)"><div style="height:14px;width:3.8%;min-width:6px;background:#8ecbe8"></div></div></div>
+        <div style="padding:18px 0;border-top:1px solid rgba(255,255,255,.18)"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 24px"><div style="font-size:17px;font-weight:500;color:#fff">FMS Starter Kit · standard price</div><div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(24px,2.2vw,32px);color:#8ecbe8">₱8,200</div></div><div style="margin-top:6px;font-size:14px;line-height:1.5;color:#9aa3a8">Base module + 1 sensor node + solar. No subscription.</div><div style="margin-top:12px;height:14px;background:rgba(255,255,255,.08)"><div style="height:14px;width:6.9%;min-width:6px;background:#8ecbe8"></div></div></div>
+        <div style="padding:18px 0;border-top:1px solid rgba(255,255,255,.18)"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 24px"><div style="font-size:17px;font-weight:500;color:#eceae4">Dragino SE01-LS</div><div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(24px,2.2vw,32px);color:#fff">≈ ₱13,600</div></div><div style="margin-top:6px;font-size:14px;line-height:1.5;color:#9aa3a8">Solar LoRaWAN soil sensor, single node. Needs a LoRaWAN gateway and network, not included.</div><div style="margin-top:12px;height:14px;background:rgba(255,255,255,.08)"><div style="height:14px;width:11.5%;min-width:6px;background:rgba(255,255,255,.42)"></div></div></div>
+        <div style="padding:18px 0;border-top:1px solid rgba(255,255,255,.18)"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 24px"><div style="font-size:17px;font-weight:500;color:#eceae4">CropX Vertex SV4</div><div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(24px,2.2vw,32px);color:#fff">≈ ₱118,500</div></div><div style="margin-top:6px;font-size:14px;line-height:1.5;color:#9aa3a8">Professional soil probe. Includes a first-year platform subscription.</div><div style="margin-top:12px;height:14px;background:rgba(255,255,255,.08)"><div style="height:14px;width:100%;min-width:6px;background:rgba(255,255,255,.42)"></div></div></div>
+      </div>
+      <p style="margin:22px 0 0;font-size:14px;line-height:1.65;color:#8d959a;max-width:80ch">Competitor prices are retail listings (Dragino SE01-LS US$215; CropX Vertex SV4 A$2,638.90 incl. GST), converted at mid-market rates of about ₱63.11 per US$1 (21 Oct 2026) and ₱44.90 per A$1 (26 Oct 2026). Prices change and products differ in what they measure: the others also report conductivity or temperature, FMS adds standing-water sensing and SMS alerts. Check current listings before you decide.</p>
+    </div>
+  </div>
+</section>
+
+<section id="partners" style="background:#0c1012;padding:120px 0;border-top:1px solid rgba(255,255,255,.26)">
+  <div style="max-width:1280px;margin:0 auto;padding:0 48px">
+    <div style="display:flex;align-items:baseline;gap:14px;font-size:13px;font-weight:500;letter-spacing:.16em;color:rgba(255,255,255,.62)"><span>06</span><span style="flex:1;height:1px;background:rgba(255,255,255,.26);max-width:80px"></span><span>PARTNERSHIPS</span></div>
+    <h2 style="margin:34px 0 0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(32px,4.2vw,56px);line-height:1.04;letter-spacing:-.015em;color:#fff;max-width:22ch;text-wrap:balance">Built with people who work the land.</h2>
+    <p style="margin:26px 0 0;font-size:18px;line-height:1.65;color:#c3cacd;max-width:58ch;text-wrap:pretty">FMS is being tested and shaped alongside universities and farming communities in the field.</p>
+    <div style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
+      <div style="border:1px solid rgba(142,203,232,.7);padding:34px 26px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;gap:28px"><div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(26px,2.6vw,36px);line-height:1.1;color:#fff;text-wrap:balance">Maejo University</div><div style="font-size:13px;font-weight:500;letter-spacing:.14em;color:#8ecbe8">FIELD PILOT · CHIANG MAI</div></div>
+      <div style="border:1px solid rgba(255,255,255,.26);padding:34px 26px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;gap:28px"><div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(26px,2.6vw,36px);line-height:1.1;color:#fff;text-wrap:balance">Migcawayan Tribal Agriculture Cooperative</div><div style="font-size:13px;font-weight:500;letter-spacing:.14em;color:rgba(255,255,255,.62)">PARTNER</div></div>
+    </div>
+    <div style="margin-top:48px;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center">
+      <span style="font-size:17px;color:#c3cacd">Want to pilot FMS with your farm, cooperative or LGU?</span>
+      <a href="{{ mailto }}" style="border:1px solid rgba(255,255,255,.6);color:#fff;padding:13px 26px;font-size:15px;font-weight:500;letter-spacing:.08em" style-hover="background:#fff;color:#111517">TALK TO THE TEAM</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background-image:linear-gradient(rgba(8,11,13,.82),rgba(8,11,13,.82)),url('https://images.unsplash.com/photo-1720156457517-c5ae8b9915f0?fm=jpg&amp;q=80&amp;w=2400&amp;auto=format&amp;fit=crop');background-size:cover;background-position:center;background-attachment:fixed;padding:120px 0;border-top:1px solid rgba(255,255,255,.26)">
+  <div style="max-width:1280px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:64px;align-items:start">
+    <div style="position:sticky;top:48px;display:flex;flex-direction:column;gap:34px">
+      <div style="display:flex;align-items:baseline;gap:14px;font-size:13px;font-weight:500;letter-spacing:.16em;color:rgba(255,255,255,.62)"><span>07</span><span style="flex:1;height:1px;background:rgba(255,255,255,.26);max-width:80px"></span><span>QUESTIONS</span></div>
+      <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(32px,4.2vw,56px);line-height:1.04;letter-spacing:-.015em">Common questions</h2>
+    </div>
+    <div>
+      <sc-for list="{{ faqs }}" as="item" hint-placeholder-count="7">
+        <div style="border-top:1px solid rgba(255,255,255,.22)">
+          <button onClick="{{ item.toggle }}" style="width:100%;background:none;border:none;padding:28px 0;cursor:pointer;text-align:left;display:flex;justify-content:space-between;align-items:baseline;gap:24px;font-family:'IBM Plex Sans',sans-serif;font-size:19px;font-weight:500;line-height:1.4;color:#fff" style-hover="color:#8ecbe8">
+            <span style="display:flex;gap:20px;align-items:baseline"><span style="font-size:13px;font-weight:500;letter-spacing:.1em;color:rgba(255,255,255,.62);flex:none">{{ item.n }}</span><span>{{ item.q }}</span></span>
+            <sc-if value="{{ item.isOpen }}" hint-placeholder-val="{{ false }}"><span style="font-size:24px;color:#c3cacd;flex:none;line-height:1">–</span></sc-if>
+            <sc-if value="{{ item.isClosed }}" hint-placeholder-val="{{ true }}"><span style="font-size:24px;color:#c3cacd;flex:none;line-height:1">+</span></sc-if>
+          </button>
+          <sc-if value="{{ item.isOpen }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0 0 0 33px;font-size:17px;line-height:1.7;color:#c3cacd;padding-bottom:32px;max-width:62ch;text-wrap:pretty">{{ item.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+      <div style="border-top:1px solid rgba(255,255,255,.22)"></div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0c1012;border-top:1px solid #23292d;padding:36px 0">
+  <div style="max-width:1280px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap">
+    <span style="font-family:'Instrument Serif',Georgia,serif;font-size:26px;letter-spacing:.04em;color:#fff">FMS</span>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;font-size:15px">
+      <a href="#story" style="color:#cfd6da" style-hover="color:#fff">Back to start</a>
+      <a href="#faq" style="color:#cfd6da" style-hover="color:#fff">Questions</a>
+      <a href="{{ mailto }}" style="color:#cfd6da" style-hover="color:#fff">{{ emailText }}</a>
+    </div>
+    <div style="font-size:15px;color:#8d959a">© 2026 FMS · Manila &amp; Chiang Mai</div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:820}}">
+const CHAPTERS = 9;
+
+class Component extends DCLogic {
+  state = { ch: 0, open: -1 };
+  rootRef = React.createRef();
+
+  componentDidMount() {
+    this.onScroll = () => {
+      const story = this.rootRef.current && this.rootRef.current.querySelector('#story');
+      if (!story) return;
+      const r = story.getBoundingClientRect();
+      const travel = r.height - window.innerHeight;
+      const p = travel > 0 ? Math.min(Math.max(-r.top / travel, 0), 0.999) : 0;
+      const i = Math.floor(p * CHAPTERS);
+      if (i !== this.state.ch) this.setState({ ch: i });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll); }
+
+  goTo(i) {
+    const story = this.rootRef.current && this.rootRef.current.querySelector('#story');
+    if (!story) return;
+    const travel = story.offsetHeight - window.innerHeight;
+    window.scrollTo({ top: story.offsetTop + travel * (i / CHAPTERS) + 8, behavior: 'smooth' });
+  }
+
+  dotStyle(active) {
+    return 'width:' + (active ? '10px' : '7px') + ';height:' + (active ? '10px' : '7px') +
+      ';border-radius:50%;padding:0;cursor:pointer;border:1px solid rgba(255,255,255,.85);background:' +
+      (active ? '#fff' : 'transparent') + ';transition:all .25s ease';
+  }
+
+  faqData = [
+    ['Do I need a SIM card for every sensor?', 'No. One standard cellular SIM lives in the Base Module. Sensor nodes reach it over free 433MHz radio — verified to 340m in real field conditions.'],
+    ['What does it actually tell me about my soil?', 'A raw soil moisture reading and a 0–100 condition index for each node, scored against that site\u2019s wilting point and optimal moisture, plus the surface water level. Text STATUS to the base station and it sends back the current numbers and a map pin. It does not measure nutrients, pH, or soil temperature — moisture and standing water only.'],
+    ['Will it tell me when to irrigate?', 'It tells you where the field sits between dry and saturated, on demand, so you can decide. What it does not do yet is text you unprompted on the dry side — automatic alerts currently fire only when a field goes saturated or standing water rises. Dry-side irrigation alerts are on the roadmap, not shipping.'],
+    ['Do I need WiFi or internet on the farm?', 'No. The Base Module uses standard cellular networks to send a direct SMS. Nothing on your end needs an internet connection.'],
+    ['Will it stay powered through cloudy, rainy weather?', 'Yes. Internal batteries carry each module through several days without direct sun, and the panels keep a trickle charge going even under heavy overcast.'],
+    ['What\u2019s the real range — not the spec-sheet number?', '340 meters, measured in saturated rice paddies at 1200bps. The radio is rated further under open line-of-sight, but 340m is the number we design around, because that\u2019s what we\u2019ve actually seen in the mud.'],
+    ['What isn\u2019t finished yet?', 'Dry-side irrigation alerts, full multi-hop mesh routing (today it\u2019s a single-hop bounce-and-dedup relay), per-site soil calibration for exact thresholds, an itemized bill of materials behind our pricing, and battery telemetry.']
+  ];
+
+  renderVals() {
+    const { ch, open } = this.state;
+    // Address built here (not in the HTML) so Cloudflare email obfuscation can't rewrite it.
+    const addr = ['fms-sales', 'luffmans.com'].join('@');
+    const v = {
+      rootRef: this.rootRef,
+      mailto: 'mailto:' + addr,
+      emailText: addr,
+      counter: String(ch + 1).padStart(2, '0') + ' / ' + String(CHAPTERS).padStart(2, '0'),
+      faqs: this.faqData.map(([q, a], i) => ({
+        q, a, n: String(i + 1).padStart(2, '0'),
+        toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i })),
+        isOpen: open === i,
+        isClosed: open !== i
+      }))
+    };
+    for (let i = 0; i < CHAPTERS; i++) {
+      v['c' + i] = ch === i;
+      v['go' + i] = () => this.goTo(i);
+      v['dot' + i] = this.dotStyle(ch === i);
+    }
+    return v;
+  }
+}
+</script>
+</body>
+</html>
+</script>
+</body>
+</html>
